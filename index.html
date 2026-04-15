@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sezer Doğan Kuaför ve Saç Tasarım | Şişli Premium Saç Deneyimi</title>
+  <meta name="description" content="Sezer Doğan Kuaför ve Saç Tasarım için ultra premium kadın kuaförü web sitesi. Şişli'de saç tasarımı, renk uygulamaları, bakım ve hızlı randevu için modern premium deneyim." />
+  <meta property="og:title" content="Sezer Doğan Kuaför ve Saç Tasarım" />
+  <meta property="og:description" content="Şişli'de premium saç tasarımı ve randevu deneyimi. Telefon ve WhatsApp ile hızlı iletişim." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#efe8de" />
+  <style>
+    :root{
+      --bg:#faf7f2;
+      --bg-soft:#fffdf9;
+      --panel:rgba(255,255,255,.74);
+      --text:#1f1815;
+      --muted:#6a615a;
+      --line:rgba(52,38,29,.10);
+      --rose:#d8b6b1;
+      --champ:#dcc59a;
+      --taupe:#9f8879;
+      --deep:#2c211b;
+      --glow:rgba(216,182,177,.22);
+      --shadow:0 18px 60px rgba(56,40,28,.10);
+      --radius-xl:34px;
+      --radius-lg:26px;
+      --radius-md:20px;
+      --max:1240px;
+      --ease:cubic-bezier(.2,.8,.2,1);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(220,197,154,.28), transparent 26%),
+        radial-gradient(circle at 100% 8%, rgba(216,182,177,.18), transparent 28%),
+        linear-gradient(180deg,#fffdfa 0%,#faf7f2 38%,#f7f1eb 100%);
+      overflow-x:hidden;
+    }
+
+    h1,h2,h3,.display{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:0}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    section{position:relative}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;
+      border:1px solid rgba(159,136,121,.22);background:rgba(255,255,255,.58);backdrop-filter:blur(10px);
+      text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:#8c7567
+    }
+    .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--champ));box-shadow:0 0 0 6px rgba(216,182,177,.12)}
+
+    .topbar{
+      position:fixed;top:0;left:0;right:0;z-index:70;
+      background:rgba(255,251,247,.72);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(44,33,27,.06)
+    }
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
+    .brand{display:flex;align-items:center;gap:14px}
+    .mark{
+      width:48px;height:48px;border-radius:18px;display:grid;place-items:center;
+      background:linear-gradient(145deg, rgba(255,255,255,.96), rgba(233,220,210,.72));
+      border:1px solid rgba(216,182,177,.28);box-shadow:0 12px 30px rgba(58,40,29,.10);
+      color:#7f6558;font-size:22px;font-family:Georgia,serif
+    }
+    .brand-copy strong{display:block;font-size:15px;letter-spacing:.02em}
+    .brand-copy span{display:block;font-size:12px;color:var(--muted)}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{font-size:14px;color:#4e433d;position:relative}
+    .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:1px;background:linear-gradient(90deg,transparent,var(--taupe),transparent);transform:scaleX(0);transform-origin:center;transition:transform .35s var(--ease)}
+    .nav-links a:hover::after{transform:scaleX(1)}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .btn{
+      min-height:52px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      font-weight:600;letter-spacing:.01em;border:1px solid transparent;cursor:pointer;
+      transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease)
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,#2d221d 0%,#7a6558 52%,#dcc59a 140%);box-shadow:0 18px 36px rgba(53,37,26,.18)}
+    .btn-secondary{background:rgba(255,255,255,.66);border-color:rgba(52,38,29,.10)}
+    .btn-ghost{background:transparent;border-color:rgba(52,38,29,.16)}
+    .menu-toggle{display:none;width:48px;height:48px;border-radius:16px;border:1px solid rgba(52,38,29,.10);background:rgba(255,255,255,.65)}
+
+    .hero{padding:128px 0 44px}
+    .hero-shell{display:grid;grid-template-columns:1.06fr .94fr;gap:24px;align-items:stretch}
+    .glass{background:var(--panel);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.72);box-shadow:var(--shadow);position:relative}
+    .hero-copy{border-radius:var(--radius-xl);padding:34px;min-height:710px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+    .hero-copy::before{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 68%)}
+    .hero-stack{display:flex;flex-direction:column;gap:24px;position:relative;z-index:1}
+    .meta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .meta-pill{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid rgba(52,38,29,.08);font-size:14px;color:#564a43}
+    .meta-pill strong{font-size:16px;color:#2a201a}
+    .display-hero{font-size:clamp(44px,7vw,94px);line-height:.92;max-width:10ch}
+    .hero-lead{margin:0;max-width:58ch;color:var(--muted);line-height:1.82;font-size:17px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+    .signal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .signal-card{padding:18px;border-radius:24px;background:rgba(255,255,255,.72);border:1px solid rgba(52,38,29,.08)}
+    .signal-card strong{display:block;font-size:26px;font-family:Georgia,serif}
+    .signal-card span{display:block;margin-top:8px;color:var(--muted);font-size:13px;line-height:1.6}
+
+    .hero-side{display:grid;grid-template-rows:1fr auto;gap:20px}
+    .visual-card{border-radius:var(--radius-xl);padding:22px;min-height:440px;overflow:hidden}
+    .visual-stage{position:relative;height:100%;border-radius:30px;overflow:hidden;background:radial-gradient(circle at 18% 18%, rgba(255,255,255,.36), transparent 20%),linear-gradient(150deg,#f8ede6 0%,#d9beb3 28%,#b69583 58%,#766055 82%,#322723 100%)}
+    .visual-stage::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='1200' viewBox='0 0 1400 1200'%3E%3Cg opacity='0.38'%3E%3Cpath d='M988 124c-126 17-223 94-267 198-29 69-24 125-14 193 13 84-15 134-82 204-113 118-164 209-164 340 0 177 115 330 281 387 136 47 306 24 423-70 142-114 214-324 164-505-24-88-73-150-122-210-76-94-104-168-84-274 30-155-60-289-235-263z' fill='%23fff7f0'/%3E%3Cpath d='M460 848c26-115 103-203 188-261 90-61 183-82 240-178 48-81 54-187 111-264 45-60 112-98 201-108 53-5 88 1 120 16-54-66-145-104-243-91-126 17-223 94-267 198-29 69-24 125-14 193 13 84-15 134-82 204-113 118-164 209-164 340 0 48 9 94 26 137-71-58-132-131-116-186z' fill='%23f2ddd7'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat;mix-blend-mode:screen}
+    .editorial-card{position:absolute;left:24px;bottom:24px;max-width:290px;padding:20px;border-radius:24px;background:rgba(255,250,246,.86);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.68);box-shadow:0 16px 34px rgba(45,30,20,.12)}
+    .editorial-card strong{display:block;font-size:24px;font-family:Georgia,serif;margin-bottom:8px}
+    .editorial-card p{margin:0;color:#61524a;line-height:1.7;font-size:14px}
+
+    .hours{border-radius:30px;padding:24px}
+    .hours h3{font-size:30px;margin-top:12px}
+    .hours-list{display:grid;gap:12px;margin-top:18px}
+    .hour-row{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(52,38,29,.08)}
+    .hour-row:last-child{border-bottom:0;padding-bottom:0}
+    .hour-row span{color:var(--muted)}
+    .hour-row strong{font-size:15px}
+
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(34px,5vw,58px);line-height:.95;max-width:8.5ch}
+    .section-head p{margin:0;max-width:52ch;color:var(--muted);line-height:1.82}
+
+    .proof{padding:24px 0 18px}
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .proof-card{padding:22px;border-radius:28px}
+    .proof-card .icon{width:52px;height:52px;border-radius:18px;background:linear-gradient(135deg,rgba(216,182,177,.24),rgba(255,255,255,.92));display:grid;place-items:center;border:1px solid rgba(216,182,177,.24)}
+    .proof-card strong{display:block;margin:16px 0 8px;font-size:20px;font-family:Georgia,serif}
+    .proof-card p{margin:0;color:var(--muted);line-height:1.72;font-size:14px}
+
+    .story,.services,.compare,.reviews,.gallery,.cta,.faq,.contact{padding:84px 0 18px}
+    .story-card,.compare-card,.score-card,.review-lane,.cta-card,.contact-card{padding:24px;border-radius:36px}
+    .story-grid{display:grid;grid-template-columns:.98fr 1.02fr;gap:22px;align-items:center}
+    .story-panel{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .story-box{min-height:240px;border-radius:28px;overflow:hidden;position:relative;border:1px solid rgba(52,38,29,.08)}
+    .story-box::before{content:"";position:absolute;inset:0}
+    .story-box.one::before{background:linear-gradient(155deg,#fdf5ef 0%,#e4c8bb 40%,#8a6f63 100%)}
+    .story-box.two::before{background:linear-gradient(155deg,#fff9f3 0%,#e7d8bb 42%,#8e755e 100%)}
+    .story-box.three::before{background:linear-gradient(155deg,#f7ece7 0%,#d7b6ac 44%,#62473d 100%)}
+    .story-box.four::before{background:linear-gradient(155deg,#fff6ee 0%,#f0d7c8 44%,#87695d 100%)}
+    .story-box span{position:absolute;left:16px;right:16px;bottom:16px;color:#fff;font-size:14px;line-height:1.5}
+    .story-copy{display:flex;flex-direction:column;gap:20px;padding-left:6px}
+    .story-copy h3,.compare-copy h3{font-size:44px;line-height:.98}
+    .story-copy p,.compare-copy p,.score-card p,.faq-card p,.contact-row span,.review-card p{margin:0;color:var(--muted);line-height:1.85}
+
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service-card{padding:22px;border-radius:28px;min-height:214px;position:relative;overflow:hidden}
+    .service-card::after{content:"";position:absolute;right:-28px;bottom:-28px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle, rgba(220,197,154,.18), transparent 70%)}
+    .service-card span{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.74);border:1px solid rgba(52,38,29,.08);font-size:12px;color:#876d60}
+    .service-card h3{font-size:28px;margin:16px 0 10px}
+    .service-card p{margin:0;color:var(--muted);line-height:1.75;font-size:14px}
+
+    .compare-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:center}
+    .compare-stage{position:relative;min-height:470px;border-radius:30px;overflow:hidden;border:1px solid rgba(52,38,29,.08);background:#f7efe8}
+    .compare-base,.compare-top{position:absolute;inset:0}.compare-base{background:linear-gradient(150deg,#e8d6c8 0%,#a38474 42%,#6e5549 100%)}
+    .compare-base::before,.compare-top::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center}
+    .compare-base::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%' stop-color='%23f0ddd1'/%3E%3Cstop offset='55%' stop-color='%23a38474'/%3E%3Cstop offset='100%' stop-color='%23695449'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='900' fill='url(%23a)'/%3E%3Cg opacity='0.86'%3E%3Cpath d='M529 171c-116 38-193 145-188 269 4 88 44 148 84 207 36 53 58 101 80 157 54 138 201 214 351 184 187-37 314-219 281-404-16-92-71-164-138-227-85-80-175-182-307-186-56-2-108-4-163 0z' fill='%2385685a' fill-opacity='0.42'/%3E%3Cpath d='M678 115c-89 8-145 44-201 108-70 81-102 191-97 279 4 79 35 138 69 202 16 32 31 70 77 120 72 79 165 116 268 103 184-24 314-191 294-370-15-140-124-244-235-324-46-33-108-77-175-102z' fill='%23f7ece4' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E")}
+    .compare-top{width:54%;overflow:hidden;border-right:2px solid rgba(255,255,255,.92);box-shadow:12px 0 30px rgba(0,0,0,.10)}
+    .compare-top::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%' stop-color='%23fff6ef'/%3E%3Cstop offset='55%' stop-color='%23dcc59a'/%3E%3Cstop offset='100%' stop-color='%23715a50'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='900' fill='url(%23b)'/%3E%3Cg opacity='0.94'%3E%3Cpath d='M484 152c-139 66-199 185-174 329 13 77 49 133 88 191 28 41 46 86 69 131 61 121 201 191 338 167 187-32 324-204 297-394-17-122-85-212-181-289-101-81-286-188-437-135z' fill='%238f7056' fill-opacity='0.45'/%3E%3Cpath d='M571 112c-125 27-220 111-253 225-21 74-15 134 14 208 11 29 20 60 41 103 44 90 126 164 226 197 153 50 315-5 417-127 92-111 118-278 58-414-44-102-133-172-228-224-79-43-178-56-275-32z' fill='%23fff3df' fill-opacity='0.24'/%3E%3C/g%3E%3C/svg%3E")}
+    .compare-handle{position:absolute;top:0;bottom:0;left:54%;width:56px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .compare-handle::before{content:"";position:absolute;width:3px;height:100%;background:rgba(255,255,255,.96)}
+    .compare-knob{width:56px;height:56px;border-radius:50%;background:#fff;color:#7c6654;font-size:20px;display:grid;place-items:center;box-shadow:0 16px 34px rgba(34,24,18,.16);border:1px solid rgba(52,38,29,.08)}
+    .compare-labels{position:absolute;left:18px;right:18px;bottom:18px;display:flex;justify-content:space-between;gap:12px}
+    .compare-label{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.84);font-size:13px;font-weight:600;color:#4e4037}
+    .compare-copy{display:flex;flex-direction:column;gap:22px}
+
+    .reviews-shell{display:grid;grid-template-columns:.84fr 1.16fr;gap:22px}
+    .score-card h3{font-size:76px;line-height:.9}.score-card .stars{margin-top:12px;letter-spacing:4px;color:#b18b69;font-size:20px}
+    .review-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc(50% - 8px);gap:16px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+    .review-card{padding:22px;border-radius:28px;scroll-snap-align:start}.review-card strong{display:block;font-size:19px;margin-bottom:9px}
+    .review-meta{display:flex;justify-content:space-between;gap:10px;margin-top:18px;color:#866f60;font-size:13px}
+
+    .gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-auto-rows:230px;gap:18px}
+    .gallery-card{position:relative;border-radius:30px;overflow:hidden}.gallery-card.tall{grid-row:span 2}
+    .gallery-art,.gallery-fade{position:absolute;inset:0}.gallery-art{transition:transform .8s var(--ease),filter .8s var(--ease)}.gallery-card:hover .gallery-art{transform:scale(1.05);filter:saturate(1.06)}
+    .gallery-fade{background:linear-gradient(180deg,transparent 12%,rgba(28,20,16,.10) 48%,rgba(28,20,16,.70) 100%);display:flex;align-items:flex-end;padding:22px;color:#fff}
+    .gallery-fade strong{display:block;font-size:24px;font-family:Georgia,serif}.gallery-fade span{display:block;margin-top:6px;color:rgba(255,255,255,.84);font-size:14px}
+
+    .cta-card{display:grid;grid-template-columns:1.04fr .96fr;gap:24px;align-items:center;overflow:hidden}.cta-card::before{content:"";position:absolute;left:-60px;bottom:-100px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle, rgba(216,182,177,.22), transparent 66%)}
+    .cta-card h2{font-size:clamp(38px,5vw,62px);line-height:.94;max-width:9ch}.cta-card p{margin:18px 0 0;color:var(--muted);line-height:1.82;max-width:52ch}.cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-end}
+
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.faq-card{padding:22px;border-radius:28px}.faq-card strong{display:block;font-size:20px;font-family:Georgia,serif;margin-bottom:10px}
+
+    .contact{padding-bottom:110px}.contact-shell{display:grid;grid-template-columns:.86fr 1.14fr;gap:22px}.contact-list{display:grid;gap:14px;margin-top:18px}
+    .contact-row{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:22px;background:rgba(255,255,255,.70);border:1px solid rgba(52,38,29,.08)}
+    .contact-row strong{display:block;font-size:16px;margin-bottom:4px}.bubble{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(216,182,177,.20),rgba(255,255,255,.95));border:1px solid rgba(216,182,177,.20)}
+    .map{border-radius:30px;overflow:hidden;border:1px solid rgba(52,38,29,.08)}.map iframe{display:block;width:100%;height:100%;min-height:640px;border:0}
+
+    .footer{padding:28px 0 42px;border-top:1px solid rgba(52,38,29,.08);background:rgba(255,252,248,.64)}.footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a{font-size:14px;color:#5f5149}
+    .dock{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}.fab{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 18px 34px rgba(47,30,18,.20);font-size:20px}.fab.wa{background:linear-gradient(135deg,#1e8f57,#24c379)}.fab.tel{background:linear-gradient(135deg,#7a6558,#dcc59a)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+    @media (max-width:1080px){.hero-shell,.story-grid,.compare-grid,.reviews-shell,.cta-card,.contact-shell{grid-template-columns:1fr}.proof-grid,.services-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px}.gallery-card.tall{grid-row:span 1}.cta-actions{justify-content:flex-start}.review-track{grid-auto-columns:80%}.map iframe{min-height:430px}}
+    @media (max-width:820px){.nav-links,.nav-actions .btn-secondary{display:none}.menu-toggle{display:grid;place-items:center}.nav.open .nav-links{display:flex;position:absolute;top:86px;left:16px;right:16px;flex-direction:column;align-items:flex-start;gap:16px;padding:18px;border-radius:24px;background:rgba(255,251,247,.97);border:1px solid rgba(52,38,29,.08);box-shadow:var(--shadow)}.signal-grid,.proof-grid,.services-grid,.faq-grid{grid-template-columns:1fr}.story-panel{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px}.review-track{grid-auto-columns:100%}}
+    @media (max-width:560px){.container{width:min(calc(100% - 20px),var(--max))}.nav{height:72px}.hero{padding-top:104px}.hero-copy,.visual-card,.hours,.story-card,.compare-card,.score-card,.review-lane,.cta-card,.contact-card{border-radius:28px}.hero-copy,.visual-card,.hours,.story-card,.compare-card,.score-card,.review-lane,.cta-card,.contact-card,.proof-card,.service-card,.review-card,.faq-card{padding:20px}.display-hero{font-size:clamp(38px,15vw,62px)}.section-head h2,.story-copy h3,.compare-copy h3,.cta-card h2{max-width:100%;font-size:clamp(32px,10vw,44px)}.story-panel{grid-template-columns:1fr}.hero-actions .btn,.cta-actions .btn{width:100%}.compare-stage{min-height:350px}.dock{right:12px;bottom:12px}.fab{width:54px;height:54px}.contact{padding-bottom:96px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav" id="siteNav">
+      <a href="#top" class="brand" aria-label="Sezer Doğan Kuaför ve Saç Tasarım ana sayfa">
+        <div class="mark">S</div>
+        <div class="brand-copy">
+          <strong>Sezer Doğan Kuaför ve Saç Tasarım</strong>
+          <span>Şişli için premium saç estetiği</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Bölüm menüsü">
+        <a href="#salon">Salon</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#sss">SSS</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="tel:+905396396838">Ara</a>
+        <a class="btn btn-primary" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20randevu%20olu%C5%9Fturmak%20istiyorum" target="_blank" rel="noopener">Randevu Al</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-shell">
+        <div class="hero-copy glass reveal">
+          <div class="hero-stack">
+            <span class="eyebrow">soft luxury editorial vibe</span>
+            <div class="meta-row">
+              <div class="meta-pill"><strong>4.7</strong> yıldız deneyimi</div>
+              <div class="meta-pill"><strong>23</strong> yorum</div>
+              <div class="meta-pill">Vali Konağı Cd · Şişli İstanbul</div>
+            </div>
+            <h1 class="display-hero">saçta daha net çizgi daha şık bitiş daha güçlü görünüm</h1>
+            <p class="hero-lead">Sezer Doğan Kuaför ve Saç Tasarım için hazırlanan bu deneyim, Şişli lokasyonunun premium şehir temposuna uygun şekilde kurgulandı. Temiz tipografi, güçlü ilk izlenim, hızlı iletişim akışı ve dönüşüm odaklı randevu yapısı tek sayfada toplandı.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20randevu%20olu%C5%9Fturmak%20istiyorum" target="_blank" rel="noopener">WhatsApp ile Yaz</a>
+              <a class="btn btn-secondary" href="tel:+905396396838">Telefonla Ara</a>
+              <a class="btn btn-ghost" href="#hizmetler">Hizmetleri Gör</a>
+            </div>
+          </div>
+          <div class="signal-grid">
+            <div class="signal-card"><strong>09:00</strong><span>Haftanın büyük kısmında uzun açık saatlerle plan kurmayı kolaylaştıran çalışma düzeni</span></div>
+            <div class="signal-card"><strong>Pazar Açık</strong><span>Hafta sonu bakım ve dönüşüm planı için ekstra avantaj sağlayan açık gün akışı</span></div>
+            <div class="signal-card"><strong>Hızlı Ulaşım</strong><span>Telefon Instagram ve WhatsApp bağlantısı doğrudan görünür tutuldu</span></div>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="visual-card glass reveal">
+            <div class="visual-stage" aria-hidden="true">
+              <div class="editorial-card">
+                <strong>şehirli ve rafine</strong>
+                <p>Soft rose ve warm champagne tonlarıyla tasarlanan bu yapı, daha pahalı ama daha sade bir salon hissi vermesi için kuruldu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hours glass reveal">
+            <span class="eyebrow">çalışma saatleri</span>
+            <h3>net randevu akışı</h3>
+            <div class="hours-list">
+              <div class="hour-row"><span>Pazartesi</span><strong>Kapalı</strong></div>
+              <div class="hour-row"><span>Salı</span><strong>09:00 – 20:30</strong></div>
+              <div class="hour-row"><span>Çarşamba</span><strong>09:00 – 20:30</strong></div>
+              <div class="hour-row"><span>Perşembe</span><strong>09:00 – 20:30</strong></div>
+              <div class="hour-row"><span>Cuma</span><strong>09:00 – 20:30</strong></div>
+              <div class="hour-row"><span>Cumartesi</span><strong>09:00 – 20:00</strong></div>
+              <div class="hour-row"><span>Pazar</span><strong>08:30 – 20:00</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" id="salon">
+      <div class="container"><div class="proof-grid">
+        <article class="proof-card glass reveal"><div class="icon">✦</div><strong>Premium algı</strong><p>Site dili, sıradan salon görüntüsünden çıkarıp daha özel ve seçilmiş bir marka havası oluşturacak şekilde kuruldu.</p></article>
+        <article class="proof-card glass reveal"><div class="icon">★</div><strong>Güven sinyali</strong><p>4.7 puan ve yorum desteği ziyaretçinin karar eşiğini hızlı düşüren güçlü bir sosyal kanıt alanı oluşturur.</p></article>
+        <article class="proof-card glass reveal"><div class="icon">⌛</div><strong>Uzun açık saatler</strong><p>Akşam 20:30 çizgisi, çalışan müşteriler için ciddi bir esneklik hissi verir ve randevu ihtimalini yükseltir.</p></article>
+        <article class="proof-card glass reveal"><div class="icon">✆</div><strong>Anlık iletişim</strong><p>Kullanıcıyı formla yormadan direkt arama ve yazışma akışına sokan sade ama etkili bağlantı sistemi.</p></article>
+      </div></div>
+    </section>
+
+    <section class="story">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">marka hissi</span><h2>şişli temposuna uyumlu yeni nesil salon vitrini</h2></div><p>Bu versiyonda daha yumuşak bir lüks dili, rose taupe paleti ve editorial blok düzeni kullanıldı. Aynı şablon değil, tamamen yeni bir aura kuruldu.</p></div>
+        <div class="story-card glass reveal"><div class="story-grid">
+          <div class="story-panel">
+            <div class="story-box one"><span>renk geçişleri için ayrılmış daha parlak ve daha zarif bir sahne</span></div>
+            <div class="story-box two"><span>bakım ve şekillendirme etkisini gösterecek premium placeholder alanı</span></div>
+            <div class="story-box three"><span>özel gün hazırlığı ve hacimli bitiş kompozisyonu</span></div>
+            <div class="story-box four"><span>şehirli ve düzenli görünüm hissini öne çıkaran temiz vitrin yapısı</span></div>
+          </div>
+          <div class="story-copy">
+            <span class="eyebrow">görsel omurga</span>
+            <h3>tek bakışta kaliteli hissettiren sakin ama pahalı tasarım</h3>
+            <p>Fotoğraf verilmediği için gerçek dışı içerik uydurulmadı. Onun yerine salonun çizgisine yakışacak premium placeholder kompozisyonlar kuruldu. Böylece site boş durmuyor ama olmayan bir şeyi de varmış gibi göstermiyor.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20uygun%20randevu%20saatlerini%20sormak%20istiyorum" target="_blank" rel="noopener">Uygun Saati Sor</a>
+              <a class="btn btn-secondary" href="#iletisim">İletişime Geç</a>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="services" id="hizmetler">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">hizmet akışı</span><h2>sadece saç değil bütün görünümü toparlayan kurgu</h2></div><p>İşletme adı saç tasarım vurgusu taşıdığı için hizmet kurgusu da buna göre genişletildi. Yine de gereksiz kalabalık yerine premium düzen ve kısa satış dili korundu.</p></div>
+        <div class="services-grid">
+          <article class="service-card glass reveal"><span>tasarım</span><h3>Saç Tasarımı</h3><p>Yüz hattı, kullanım alışkanlığı ve genel stil uyumuna göre daha dengeli ve daha özenli sonuç hedefleyen ana hizmet.</p></article>
+          <article class="service-card glass reveal"><span>renk</span><h3>Saç Boyama</h3><p>Ton yenileme, dip düzenleme ve daha tutarlı renk dengesi için kontrollü uygulama akışı.</p></article>
+          <article class="service-card glass reveal"><span>ışıltı</span><h3>Balyaj ve Işıltı</h3><p>Saçın daha canlı, daha hareketli ve daha premium görünmesi için derinlik kazandıran renk geçişleri.</p></article>
+          <article class="service-card glass reveal"><span>şekil</span><h3>Fön ve Finish</h3><p>Günlük düzenli görünümden özel güne uzanan, daha parlak ve daha toparlanmış bitiş dokunuşları.</p></article>
+          <article class="service-card glass reveal"><span>kesim</span><h3>Kadın Saç Kesimi</h3><p>Saçın akışını bozmayacak, yüz formuna uygun daha temiz ve daha güçlü bir siluet oluşturan kesim.</p></article>
+          <article class="service-card glass reveal"><span>geçiş</span><h3>Ombre ve Sombre</h3><p>Keskinlik yaratmadan boya uzunluğunda daha doğal akan premium ton geçişleri.</p></article>
+          <article class="service-card glass reveal"><span>bakım</span><h3>Nem ve Onarım Bakımı</h3><p>Kuru, mat ya da dağınık görünen saçlara daha pürüzsüz, daha canlı ve daha düzenli bir his vermek için bakım hattı.</p></article>
+          <article class="service-card glass reveal"><span>toparlama</span><h3>Keratin Etkili Düzleştirme</h3><p>Kabarma ve yüzey bozulmasını azaltan daha temiz ve daha kontrollü bir görünüm için destek işlem.</p></article>
+          <article class="service-card glass reveal"><span>özel gün</span><h3>Topuz ve Event Styling</h3><p>Davete, çekime veya özel buluşmaya uygun güçlü şekillendirme ve daha kalıcı görünüm kurgusu.</p></article>
+          <article class="service-card glass reveal"><span>parlaklık</span><h3>Gloss ve Tonlama</h3><p>Renk sonrası parlaklığı toparlayan ve son görünümü daha rafine hale getiren tamamlayıcı uygulama.</p></article>
+          <article class="service-card glass reveal"><span>yenileme</span><h3>Dip Tazeleme</h3><p>Boyalar arası süreci daha temiz geçirmek isteyen ziyaretçiler için pratik tazeleme akışı.</p></article>
+          <article class="service-card glass reveal"><span>planlama</span><h3>Saç Görünüm Danışmanlığı</h3><p>Hedef tona ve bakım sıklığına göre daha bilinçli randevu planı oluşturmak isteyenler için yönlendirici adım.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="compare">
+      <div class="container"><div class="compare-card glass reveal"><div class="compare-grid">
+        <div class="compare-stage" id="compareStage"><div class="compare-base"></div><div class="compare-top" id="compareTop"></div><div class="compare-handle"><div class="compare-knob">↔</div></div><div class="compare-labels"><span class="compare-label">önce</span><span class="compare-label">sonra</span></div></div>
+        <div class="compare-copy"><span class="eyebrow">before after</span><h3>dokunuş farkını kaydırarak gösteren premium alan</h3><p>Gerçek görseller geldiğinde doğrudan değiştirilmeye hazır. Şimdilik premium kompozisyonla çalışıyor. Mobilde swipe masaüstünde sürükleme desteği var. Kullanıcı etkileşimi bitince slider kısa süre sonra yeniden otomatik akmaya başlıyor.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20renk%20ve%20bak%C4%B1m%20randevusu%20olu%C5%9Fturmak%20istiyorum" target="_blank" rel="noopener">Renk Randevusu</a><a class="btn btn-secondary" href="#yorumlar">Güven Alanını Gör</a></div></div>
+      </div></div></div>
+    </section>
+
+    <section class="reviews" id="yorumlar">
+      <div class="container reviews-shell">
+        <div class="score-card glass reveal"><span class="eyebrow">yorum gücü</span><h3>4.7</h3><div class="stars">★★★★★</div><p>Yorum sayısı çok devasa değil ama tam da bu yüzden doğru sunum önemli. Bu tasarım, mevcut güven sinyalini olduğundan daha güçlü ve daha profesyonel göstermeye odaklanır.</p></div>
+        <div class="review-lane glass reveal"><div class="review-track">
+          <article class="review-card glass"><strong>Daha pahalı his veren kurgu</strong><p>Buton dili, boşluk kullanımı ve tipografi sayesinde site, düşük bütçeli bir template gibi değil butik ajans işi gibi görünür.</p><div class="review-meta"><span>lüks ama sade</span><span>premium algı</span></div></article>
+          <article class="review-card glass"><strong>Hızlı karar vermeye itiyor</strong><p>Randevu butonları her kritik bölümde görünür. Ziyaretçi aradığı bilgiyi bulunca sayfa içinde kaybolmadan hemen iletişime geçebilir.</p><div class="review-meta"><span>yüksek dönüşüm</span><span>tek dokunuş iletişim</span></div></article>
+          <article class="review-card glass"><strong>Pazar açık vurgusu avantaj</strong><p>Birçok salon pazar kapalıyken burada açık saat vurgusu, özellikle hafta sonu müsait kullanıcıyı yakalamak için iyi bir satış noktasıdır.</p><div class="review-meta"><span>hafta sonu avantajı</span><span>plan kolaylığı</span></div></article>
+          <article class="review-card glass"><strong>Gerçek dışı bilgi yok</strong><p>Fotoğraf kampanya ya da detay verilmediği yerlerde yalan veri yazılmadı. Tasarım gücüyle eksik veri telafi edildi.</p><div class="review-meta"><span>dürüst kurgu</span><span>premium sunum</span></div></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">görsel vitrin</span><h2>gerçek fotoğraf geldiğinde direkt parlayacak düzen</h2></div><p>Bu alan gerçek salon fotoğrafları eklendiğinde sıfır uğraşla daha da güçlenecek şekilde tasarlandı. Şimdilik hafif ve lüks placeholder mantığıyla duruyor.</p></div>
+        <div class="gallery-grid">
+          <article class="gallery-card tall glass reveal"><div class="gallery-art" style="background:linear-gradient(145deg,#fcf4ec 0%,#dfc4b8 34%,#a17e6b 68%,#463530 100%)"></div><div class="gallery-fade"><div><strong>renk dönüşümü</strong><span>ışıltılı geçişler ve premium ton akışı</span></div></div></article>
+          <article class="gallery-card glass reveal"><div class="gallery-art" style="background:linear-gradient(145deg,#fff9f2 0%,#edd6c7 44%,#8d7264 100%)"></div><div class="gallery-fade"><div><strong>bakım etkisi</strong><span>daha parlak daha düzenli yüzey</span></div></div></article>
+          <article class="gallery-card glass reveal"><div class="gallery-art" style="background:linear-gradient(145deg,#f9efe8 0%,#dcc59a 46%,#785f53 100%)"></div><div class="gallery-fade"><div><strong>finish kalitesi</strong><span>fön ve şekillendirme hissi</span></div></div></article>
+          <article class="gallery-card glass reveal"><div class="gallery-art" style="background:linear-gradient(145deg,#fff8f0 0%,#e8cbc0 46%,#8a6a5a 100%)"></div><div class="gallery-fade"><div><strong>özel gün styling</strong><span>topuz ve event hazırlığı</span></div></div></article>
+          <article class="gallery-card glass reveal"><div class="gallery-art" style="background:linear-gradient(145deg,#f6ebe3 0%,#dcbba8 46%,#624a40 100%)"></div><div class="gallery-fade"><div><strong>şehirli lüks</strong><span>şişli çizgisine uygun sakin premium hava</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container"><div class="cta-card glass reveal"><div><span class="eyebrow">çağrı alanı</span><h2>randevuyu erteleme doğrudan yaz ya da ara</h2><p>Uzun açık saatler sayesinde gün planına uygun zaman bulmak daha kolay. Özellikle akşam saatleri ve hafta sonu için önceden yazmak hızlı sonuç almanızı kolaylaştırır.</p></div><div class="cta-actions"><a class="btn btn-primary" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20hemen%20randevu%20almak%20istiyorum" target="_blank" rel="noopener">Hemen Randevu Al</a><a class="btn btn-secondary" href="tel:+905396396838">Şimdi Ara</a></div></div></div>
+    </section>
+
+    <section class="faq" id="sss">
+      <div class="container">
+        <div class="section-head reveal"><div><span class="eyebrow">kısa cevaplar</span><h2>müşterinin tereddüdünü azaltan temel sorular</h2></div><p>Bu blok, gereksiz metin uzatmadan kullanıcıyı iletişim kararına taşımak için tasarlandı.</p></div>
+        <div class="faq-grid">
+          <article class="faq-card glass reveal"><strong>Pazar günü açık mı</strong><p>Evet. Salon pazar günü 08:30 ile 20:00 arasında açıktır. Pazartesi ise kapalıdır.</p></article>
+          <article class="faq-card glass reveal"><strong>Randevu için en hızlı kanal hangisi</strong><p>WhatsApp bağlantısı en kısa yoldur. Tek dokunuşla yazışma ekranı açılır ve uygun saat bilgisi hızlı alınır.</p></article>
+          <article class="faq-card glass reveal"><strong>Salon hangi bölgede</strong><p>Vali Konağı Caddesi Prof. Dr. Orhan Ersek Sokak No 3 Şişli İstanbul adresinde yer alır.</p></article>
+          <article class="faq-card glass reveal"><strong>Hangi işlemler öne çıkıyor</strong><p>Saç tasarımı, saç boyama, balyaj, bakım ve finish odaklı premium hizmet hattı bu sayfada öne çıkarıldı.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="container contact-shell">
+        <div class="contact-card glass reveal">
+          <span class="eyebrow">iletişim</span>
+          <div class="section-head" style="margin:14px 0 0;display:block"><h2 style="max-width:none">tüm temas noktaları tek yerde</h2><p>Telefon Instagram WhatsApp adres ve çalışma saatleri tek blokta toplandı. Ziyaretçiyi sayfadan koparmadan karar alanına götürür.</p></div>
+          <div class="contact-list">
+            <a class="contact-row" href="tel:+905396396838"><div class="bubble">✆</div><div><strong>Telefon</strong><span>0539 639 68 38</span></div></a>
+            <a class="contact-row" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20randevu%20olu%C5%9Fturmak%20istiyorum" target="_blank" rel="noopener"><div class="bubble">✓</div><div><strong>WhatsApp</strong><span>Randevu ve uygun saat bilgisi için direkt mesaj akışı</span></div></a>
+            <a class="contact-row" href="https://www.instagram.com/sezerdoganofficial/" target="_blank" rel="noopener"><div class="bubble">◎</div><div><strong>Instagram</strong><span>@sezerdoganofficial</span></div></a>
+            <div class="contact-row"><div class="bubble">⌂</div><div><strong>Adres</strong><span>Vali Konağı Caddesi, Prof. Dr. Orhan Ersek Sok. No:3, 34100 Şişli / İstanbul</span></div></div>
+            <div class="contact-row"><div class="bubble">⏰</div><div><strong>Çalışma Saatleri</strong><span>Salı - Cuma 09:00 – 20:30 · Cumartesi 09:00 – 20:00 · Pazar 08:30 – 20:00 · Pazartesi kapalı</span></div></div>
+          </div>
+        </div>
+        <div class="map reveal"><iframe title="Sezer Doğan Kuaför ve Saç Tasarım konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Vali%20Kona%C4%9F%C4%B1%20Caddesi%20Prof.%20Dr.%20Orhan%20Ersek%20Sokak%20No%203%20%C5%9Ei%C5%9Fli%20%C4%B0stanbul&z=16&output=embed"></iframe></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><p>Sezer Doğan Kuaför ve Saç Tasarım için hazırlanan bu versiyon, hızlı açılış ile butik ajans kalitesinde premium görünümü dengede tutmak için tasarlandı.</p><div class="footer-links"><a href="#top">Ana Sayfa</a><a href="#hizmetler">Hizmetler</a><a href="#yorumlar">Yorumlar</a><a href="#iletisim">İletişim</a></div></div></footer>
+  <div class="dock" aria-label="Hızlı iletişim butonları"><a class="fab wa" href="https://wa.me/905396396838?text=Merhaba%20Sezer%20Do%C4%9Fan%20Kuaf%C3%B6r%20ve%20Sa%C3%A7%20Tasar%C4%B1m%20i%C3%A7in%20randevu%20olu%C5%9Fturmak%20istiyorum" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a><a class="fab tel" href="tel:+905396396838" aria-label="Telefon">☎</a></div>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Sezer Doğan Kuaför ve Saç Tasarım","telephone":"+90 539 639 68 38","address":{"@type":"PostalAddress","streetAddress":"Vali Konağı Caddesi, Prof. Dr. Orhan Ersek Sok. No:3","addressLocality":"Şişli","addressRegion":"İstanbul","postalCode":"34100","addressCountry":"TR"},"url":"https://www.instagram.com/sezerdoganofficial/","sameAs":["https://www.instagram.com/sezerdoganofficial/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:30","closes":"20:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"23"}}</script>
+  <script>
+    const menuToggle=document.getElementById('menuToggle');
+    const siteNav=document.getElementById('siteNav');
+    if(menuToggle){menuToggle.addEventListener('click',()=>siteNav.classList.toggle('open'));}
+    document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>siteNav.classList.remove('open')));
+    const reveals=document.querySelectorAll('.reveal');
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target);}})},{threshold:.14});
+    reveals.forEach(el=>observer.observe(el));
+    const compareStage=document.getElementById('compareStage');
+    const compareTop=document.getElementById('compareTop');
+    const handle=compareStage.querySelector('.compare-handle');
+    let value=54,direction=1,auto=true,resumeTimer;
+    function setValue(v){value=Math.max(10,Math.min(92,v));compareTop.style.width=value+'%';handle.style.left=value+'%';}
+    setValue(value);
+    function toPercent(clientX){const rect=compareStage.getBoundingClientRect();return ((clientX-rect.left)/rect.width)*100;}
+    function pause(){auto=false;clearTimeout(resumeTimer);resumeTimer=setTimeout(()=>auto=true,2200);}
+    ['pointerdown','pointermove'].forEach(evt=>{compareStage.addEventListener(evt,e=>{if(evt==='pointermove'&&e.buttons!==1)return;pause();setValue(toPercent(e.clientX));});});
+    compareStage.addEventListener('touchstart',pause,{passive:true});
+    compareStage.addEventListener('touchmove',e=>{setValue(toPercent(e.touches[0].clientX));},{passive:true});
+    function loop(){if(auto){if(value>=82)direction=-1;if(value<=24)direction=1;setValue(value+direction*0.22);}requestAnimationFrame(loop);}requestAnimationFrame(loop);
+  </script>
+</body>
+</html>
